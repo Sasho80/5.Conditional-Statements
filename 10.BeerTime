@@ -1,0 +1,39 @@
+using System;
+using System.Globalization;
+using System.Threading;
+
+class Beer
+{
+    static void Main()
+    {
+      
+        Console.Write("Enter a time in format hh:mm:ss tt:");
+        string timeNew = Console.ReadLine();
+        Console.WriteLine("\n");
+        DateTime result;
+        
+        if (!DateTime.TryParseExact(timeNew, "hh:mm:ss tt", 
+            CultureInfo.CurrentCulture, 
+            DateTimeStyles.None, out result))
+        {
+            Console.WriteLine("Invalid Exception!");
+            Console.WriteLine("\n");
+            return;
+        }
+        //Search the Web: parse time am pm C#
+        DateTime startTime =DateTime.Parse("01:01:01 PM");
+        DateTime endTime = DateTime.Parse("02:59:59 AM");
+
+          if ((result >= startTime )||( result <= endTime))
+          {
+            Console.WriteLine("The enter time {0} is beer time.",result);
+          }
+          else
+          {
+            Console.WriteLine("The enter time {0} no beer time.",result );
+          }
+          Console.WriteLine("\n");
+    }
+
+
+}
