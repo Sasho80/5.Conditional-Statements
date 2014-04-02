@@ -1,0 +1,72 @@
+using System;
+
+class Biggest
+{
+    static void Main()
+    {
+        Console.Write("Enter five different numbers:");
+        float numA = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numB = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numC = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numD = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numE = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool checkAB = (numA > numB);
+        bool checkBA = (numB > numA);
+        bool checkCA = (numC > numA);
+        bool checkDA = (numD > numA);
+        bool checkEA = (numE > numA);
+
+        if (checkAB)
+        {
+            float numRef1 = Math.Max(numA, numC);
+            float numRef2 = Math.Max(numRef1, numD);
+            float numRef3 = Math.Max(numRef2, numE);
+            Console.WriteLine("Biggest number is {0}", numRef3);
+            Console.WriteLine("\n");
+        }
+        else if (checkBA)
+        {
+            float numRef1 = Math.Max(numB, numC);
+            float numRef2 = Math.Max(numRef1, numD);
+            float numRef3 = Math.Max(numRef2, numE);
+            Console.WriteLine("Biggest number is:{0}", numRef3);
+            Console.WriteLine("\n");
+        }
+        else if (checkCA)
+        {
+            float numRef1 = Math.Max(numC, numB);
+            float numRef2 = Math.Max(numRef1, numD);
+            float numRef3 = Math.Max(numRef2, numE);
+            Console.WriteLine("Biggest number is:{0}", numRef3);
+            Console.WriteLine("\n");
+        }
+        else if (checkDA)
+        {
+            float numRef1 = Math.Max(numD, numB);
+            float numRef2 = Math.Max(numRef1, numC);
+            float numRef3 = Math.Max(numRef2, numE);
+            Console.WriteLine("Biggest number is:{0}", numRef3);
+            Console.WriteLine("\n");
+        }
+        else if (checkEA)
+        {
+            float numRef1 = Math.Max(numE, numB);
+            float numRef2 = Math.Max(numRef1, numC);
+            float numRef3 = Math.Max(numRef2, numD);
+            Console.WriteLine("Biggest number is:{0}", numRef3);
+            Console.WriteLine("\n");
+        }
+        else
+        {
+            Console.WriteLine("Incorrectly entered numbers!");
+        }
+
+    }
+}
+
