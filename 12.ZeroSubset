@@ -1,0 +1,215 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter integer number.");
+        int numA = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        int numB = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        int numC = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        int numD = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        int numE = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool checkAB = (numA + numB == 0);
+        bool checkAC = (numA + numC == 0);
+
+        bool checkABC = (numA + numB + numC == 0);
+        bool checkABD = (numA + numB + numD == 0);
+        bool checkABE = (numA + numB + numE == 0);
+
+        bool checkABCD = (numA + numB + numC + numD == 0);
+        bool checkABCE = (numA + numB + numC + numE == 0);
+
+        bool checkABCDE = ((numA + numB + numC + numD + numE) == 0);
+
+        bool checkBC = (numB + numC == 0);
+        bool checkBE = (numB + numE == 0);
+
+        bool checkBEC = (numB + numE + numC == 0);
+        bool checkBED = (numB + numE + numD == 0);
+        bool checkBCD = (numB + numC + numD == 0);
+
+        bool checkBCAE = (numB + numC + numA + numE == 0);
+        bool checkBCDE = (numB + numC + numD + numE == 0);
+
+        bool checkCD = (numC + numD == 0);
+        bool checkCE = (numC + numE == 0);
+
+        bool checkCADE = (numC + numA + numD + numE == 0);
+
+        bool checkCAE = (numC + numA + numE == 0);
+        bool checkCAD = (numC + numA + numD == 0);
+
+        bool checkDA = (numD + numA == 0);
+        bool checkDB = (numD + numB == 0);
+        bool checkDE = (numD + numE == 0);
+
+        bool checkDEBA = (numD + numE + numB + numA == 0);
+
+        bool checkEA = (numE + numA == 0);
+
+        bool checkEAC = (numE + numA + numC == 0);
+        bool checkEAD = (numE + numA + numD == 0);
+        
+         if ((checkAB) && (checkABC) && (checkABCD) && (checkABCDE) &&
+            (checkABCE) && (checkABD) && (checkABE) && (checkAC) &&
+            (checkBC) && (checkBCAE) && (checkBCD) && (checkBCDE) &&
+            (checkBE) && (checkBEC) && (checkBED) && (checkCAD) &&
+            (checkCADE) && (checkCAE) && (checkCD) && (checkCE) &&
+            (checkDA) && (checkDB) && (checkDE) && (checkDEBA) &&
+            (checkEA) && (checkEAC) && (checkEAD))
+         {
+            Console.Write("{0}+{1}+{2}+{3}+{4}=0", numB, numC, numD, numA, numE);
+            Console.WriteLine("\n");
+            return;
+         }
+        if (checkAB) 
+        {
+           Console.Write("{0}+{1}=0", numA, numB);
+           Console.WriteLine("\n");
+        }
+         if (checkAC)
+        {
+            Console.Write("{0}+{1}=0", numA, numC);
+            Console.WriteLine("\n");
+        }
+        if (checkBC)
+        {
+            Console.Write("{0}+{1}=0", numB, numC);
+            Console.WriteLine("\n");
+        }
+         if (checkBE)
+        {
+            Console.Write("{0}+{1}=0", numB, numE);
+            Console.WriteLine("\n");
+        }
+         if (checkCD)
+        {
+            Console.Write("{0}+{1}=0", numC, numD);
+            Console.WriteLine("\n");
+        }
+         if (checkCE)
+        {
+            Console.Write("{0}+{1}=0", numC, numE);
+            Console.WriteLine("\n");
+        }
+         if (checkDA) 
+        {
+            Console.Write("{0}+{1}=0", numD, numA);
+            Console.WriteLine("\n");
+        }
+         if (checkDB)
+        {
+            Console.Write("{0}+{1}=0", numD, numB);
+            Console.WriteLine("\n");
+        }
+         if (checkDE)
+        {
+            Console.Write("{0}+{1}=0", numD, numE);
+            Console.WriteLine("\n");
+        }
+         if (checkEA) 
+        {
+            Console.Write("{0}+{1}=0", numE, numA);
+            Console.WriteLine("\n");
+        }
+         if (checkABC) 
+        {
+            Console.Write("{0}+{1}+{2}=0", numA, numB,numC);
+            Console.WriteLine("\n");
+        }
+         if (checkABD)
+        {
+            Console.Write("{0}+{1}+{2}=0", numA, numB, numD);
+            Console.WriteLine("\n");
+        }
+         if (checkABE)
+        {
+            Console.Write("{0}+{1}+{2}=0", numA, numB,numE);
+            Console.WriteLine("\n");
+        }
+         if (checkBEC) 
+        {
+            Console.Write("{0}+{1}+{2}=0", numB, numE,numC);
+            Console.WriteLine("\n");
+        }
+         if (checkBED)
+        {
+            Console.Write("{0}+{1}+{2}=0", numB, numE,numD);
+            Console.WriteLine("\n");
+        }
+         if (checkBCD)
+        {
+            Console.Write("{0}+{1}+{2}=0", numB, numC, numD);
+            Console.WriteLine("\n");
+        }
+         if (checkCAE) 
+        {
+            Console.Write("{0}+{1}+{2}=0", numC, numA, numE);
+            Console.WriteLine("\n");
+        }
+          if (checkCAD)
+        {
+            Console.Write("{0}+{1}+{2}=0", numC, numA, numD);
+            Console.WriteLine("\n");
+        }
+         if (checkEAC)
+        {
+            Console.Write("{0}+{1}+{2}=0", numE, numA, numC);
+            Console.WriteLine("\n");
+        }
+         if (checkEAD)
+        {
+            Console.Write("{0}+{1}+{2}=0", numE, numA, numD);
+            Console.WriteLine("\n");
+        }
+         if (checkABCD)
+         {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0",numA, numB, numC, numD);
+             Console.WriteLine("\n");
+         }
+         if (checkABCE)
+	     {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0", numA, numB, numC, numE);
+             Console.WriteLine("\n");
+	     }
+         if (checkBCAE)
+         {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0",numB,numC,numA,numE);
+             Console.WriteLine("\n");
+         }
+         if (checkBCDE)
+         {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0", numB, numC, numD, numE);
+             Console.WriteLine("\n");
+         }
+         if (checkCADE)
+         {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0", numC, numD, numA, numE);
+             Console.WriteLine("\n");
+         }
+         if (checkDEBA)
+         {
+             Console.WriteLine("{0}+{1}+{2}+{3}=0", numD, numE, numB, numA);
+             Console.WriteLine("\n");
+         }
+         if(!((checkAB)||(checkABC)||(checkABCD)||(checkABCDE)||
+            (checkABCE)||(checkABD)||(checkABE)||(checkAC)||
+            (checkBC)||(checkBCAE)||(checkBCD)||(checkBCDE)||
+            (checkBE)||(checkBEC)||(checkBED)||(checkCAD)||
+            (checkCADE)||(checkCAE)||(checkCD)||(checkCE)||
+            (checkDA)||(checkDB)||(checkDE)||(checkDEBA)||
+            (checkEA)||(checkEAC)||(checkEAD)))  
+         {
+            Console.WriteLine("No zero subset.");
+            Console.WriteLine("\n");
+         }
+    }
+}
+
