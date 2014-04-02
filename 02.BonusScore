@@ -1,0 +1,36 @@
+
+using System;
+
+class Bonus
+{
+    static void Main()
+    {
+        Console.Write("Enter integer number:");
+        int numA = int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool checkNum1 = ((numA >= 1) && (numA <= 3));
+        bool checkNum2 = ((numA >= 4) && (numA <= 6));
+        bool checkNum3 = ((numA >= 7) && (numA <= 9));
+        bool checkNum4 = ((numA <= 0) || (numA >= 10));
+
+        if (checkNum1)
+        {
+            Console.WriteLine("{0}" + " " + "{1}", numA, numA * 10);
+        }
+        else if (checkNum2)
+        {
+            Console.WriteLine("{0}" + " " + "{1}", numA, numA * 100);
+        }
+        else if (checkNum3)
+        {
+            Console.WriteLine("{0}" + " " + "{1}", numA, numA * 1000);
+        }
+        else if (checkNum4)
+        {
+            Console.WriteLine("Invalid score!");
+        }
+        Console.WriteLine("\n");
+    }
+}
+
