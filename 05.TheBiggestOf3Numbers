@@ -1,0 +1,22 @@
+using System;
+
+class BiggestNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter three numbers:");
+        float numA = float.Parse(Console.ReadLine());
+        Console.Write("\n");
+        float numB = float.Parse(Console.ReadLine());
+        Console.Write("\n");
+        float numC = float.Parse(Console.ReadLine());
+        Console.Write("\n");
+
+        float numD = Math.Max(numA, numB);
+        float numE = Math.Max(numD, numC);
+
+        Console.Write("The biggest is: {0}", numE);
+        Console.WriteLine("\n");
+    }
+}
+
