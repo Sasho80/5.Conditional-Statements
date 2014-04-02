@@ -1,0 +1,27 @@
+using System;
+
+class ExchangeNumbers
+{
+    static void Main()
+    {
+        Console.Write("Enter integer number:a=");
+        float numA = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        Console.Write("Enter integer number:b=");
+        float numB = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool greaterAB = (numA > numB);
+        Console.Write("{0}" + " " + "{1}" + " " + " ", numA, numB);
+        if (greaterAB)
+        {
+            Console.Write("{0}" + " " + "{1}", numB, numA);
+        }
+        else
+        {
+            Console.Write("{0}" + " " + "{1}", numA, numB);
+        }
+        Console.WriteLine("\n");
+    }
+}
+
