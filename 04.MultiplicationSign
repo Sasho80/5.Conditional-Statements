@@ -1,0 +1,46 @@
+using System;
+
+class Sign
+{
+    static void Main()
+    {
+        Console.Write("Enter three numbers:");
+        float numA = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numB = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+        float numC = float.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool checkNum1 = ((numA > 0) && (numB > 0) && (numC > 0));
+        bool checkNum2 = ((numA < 0) && (numB < 0) && (numC > 0));
+        bool checkNum3 = ((numA < 0) && (numB > 0) && (numC > 0));
+        bool checkNum4 = ((numA == 0) && (numB < 0) && (numC > 0));
+        bool checkNum5 = ((numA < 0) && (numB < 0) && (numC < 0));
+
+        Console.Write("{0}" + " " + "{1}" + " " + "{2}" + " ", numA, numB, numC);
+
+        if (checkNum1)
+        {
+            Console.Write("{0}" + " ", '+');
+        }
+        else if (checkNum2)
+        {
+            Console.Write("{0}" + " ", '+');
+        }
+        else if (checkNum3)
+        {
+            Console.Write("{0}" + " ", '-');
+        }
+        else if (checkNum4)
+        {
+            Console.Write("{0}" + " ", '0');
+        }
+        else if (checkNum5)
+        {
+            Console.Write("{0}" + " ", '-');
+        }
+        Console.WriteLine("\n");
+    }
+}
+
