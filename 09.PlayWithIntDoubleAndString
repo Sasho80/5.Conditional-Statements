@@ -1,0 +1,63 @@
+using System;
+
+class SelectionOfTypes
+{
+    static void Main()
+    {
+        Console.WriteLine("Please choose of types:");
+        Console.WriteLine("\n");
+        Console.WriteLine("1.--->int:");
+        Console.WriteLine("\n");
+        Console.WriteLine("2.--->double:");
+        Console.WriteLine("\n");
+        Console.WriteLine("3.--->string:");
+        Console.WriteLine("\n");
+        int numChoice=int.Parse(Console.ReadLine());
+        Console.WriteLine("\n");
+
+        bool checkNum = ((numChoice >= 1)&&(numChoice<=3));
+
+        bool checkInt= (numChoice==1);
+        bool checkDouble = (numChoice ==2);
+        bool checkStr=(numChoice==3);
+
+        if (checkNum)
+        {
+            if (checkInt)
+            {
+                Console.Write("Please enter a int:");
+                int numInt = int.Parse(Console.ReadLine());
+                Console.WriteLine("\n");
+
+                Console.WriteLine("{0}",numInt+1);
+                Console.WriteLine("\n");
+            }
+            else if (checkDouble)
+            {
+                Console.Write("Please enter a double:");
+                double numDouble = double.Parse(Console.ReadLine());
+                Console.WriteLine("\n");
+
+                Console.WriteLine("{0}", numDouble + 1);
+                Console.WriteLine("\n");
+                
+            }
+            else if (checkStr)
+            {
+                Console.Write("Please enter a string:");
+                string varStr =Console.ReadLine();
+                Console.WriteLine("\n");
+
+                Console.WriteLine("{0}", varStr + "*");
+                Console.WriteLine("\n");
+            }
+            
+        }
+        else
+        {
+            Console.WriteLine("Invalid range!");
+            Console.WriteLine("\n");
+        }
+    }
+}
+
