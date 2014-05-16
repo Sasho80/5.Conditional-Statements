@@ -7,12 +7,12 @@ class Beer
     static void Main()
     {
       
-        Console.Write("Enter a time in format hh:mm:ss tt:");
+        Console.Write("Enter a time in format h:mm:ss tt:");
         string timeNew = Console.ReadLine();
         Console.WriteLine("\n");
         DateTime result;
         
-        if (!DateTime.TryParseExact(timeNew, "hh:mm:ss tt", 
+        if (!DateTime.TryParseExact(timeNew, "h:mm:ss tt", 
             CultureInfo.CurrentCulture, 
             DateTimeStyles.None, out result))
         {
@@ -21,8 +21,8 @@ class Beer
             return;
         }
         //Search the Web: parse time am pm C#
-        DateTime startTime =DateTime.Parse("01:01:01 PM");
-        DateTime endTime = DateTime.Parse("02:59:59 AM");
+        DateTime startTime =DateTime.Parse("1:00 PM");
+        DateTime endTime = DateTime.Parse("2:59 AM");
 
           if ((result >= startTime )||( result <= endTime))
           {
