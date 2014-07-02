@@ -1,15 +1,14 @@
 using System;
 
-class PlayCards
+class CheckForAPlayCard
 {
     static void Main()
     {
-        Console.Write("Enter the symbol for the card:");
-        string card = Console.ReadLine();
-        Console.WriteLine("\n");
-
-        switch (card)
+        Console.WriteLine("Enter string:");
+        string str=Console.ReadLine();
+        switch (str)
         {
+            case "1":
             case "2":
             case "3":
             case "4":
@@ -20,19 +19,15 @@ class PlayCards
             case "9":
             case "10":
             case "J":
-            case "K":
             case "Q":
+            case "K":
             case "A":
-                Console.WriteLine("Yes");
-                Console.WriteLine("\n");
+                Console.WriteLine("yes");
                 break;
             default:
-                Console.WriteLine("No");
-                Console.WriteLine("\n");
+                Console.WriteLine("no");
                 break;
         }
-
     }
 }
-
 
