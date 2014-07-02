@@ -1,35 +1,34 @@
 using System;
 
-class ConvertingOfDigit
+class DigitAsWord
 {
     static void Main()
     {
-        Console.Write("Enter a number (from 0 to 9):");
-        string numStr = Console.ReadLine();
-
-        switch (numStr)
+        Console.WriteLine("Enter number of (0-9):");
+        string n=Console.ReadLine();
+        switch (n)
         {
-            case "0": Console.WriteLine("Zero");
+            case "0": Console.WriteLine("zero");
                 break;
-            case "1": Console.WriteLine("One");
+            case "1": Console.WriteLine("one");
                 break;
-            case "2": Console.WriteLine("Two");
+            case "2": Console.WriteLine("two");
                 break;
-            case "3": Console.WriteLine("Three");
+            case "3": Console.WriteLine("three");
                 break;
-            case "4": Console.WriteLine("Four");
+            case "4": Console.WriteLine("four");
                 break;
-            case "5": Console.WriteLine("Five");
+            case "5": Console.WriteLine("five");
                 break;
-            case "6": Console.WriteLine("Six");
+            case "6": Console.WriteLine("six");
                 break;
-            case "7": Console.WriteLine("Seven");
+            case "7": Console.WriteLine("seven");
                 break;
-            case "8": Console.WriteLine("Eight");
+            case "8": Console.WriteLine("eight");
                 break;
-            case "9": Console.WriteLine("Nine");
+            case "9": Console.WriteLine("nine");
                 break;
-            default: Console.WriteLine("Not a digit.");
+            default: Console.WriteLine("not a digit");
                 break;
         }
     }
