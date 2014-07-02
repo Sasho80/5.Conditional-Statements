@@ -50,9 +50,9 @@ class ZeroSubset
         {
             Console.WriteLine("{0}+{1}+{2}+{3}=0", num[0], num[1], num[3], num[4]);
         }
-        if (num[1] + num[2] + num[3] + num[4] == 0)
+        if (num[1] + num[3] + num[2] + num[4] == 0)
         {
-            Console.WriteLine("{0}+{1}+{2}+{3}=0", num[1], num[2], num[3], num[4]);
+            Console.WriteLine("{0}+{1}+{2}+{3}=0", num[1], num[3], num[2], num[4]);
         }
         if (!((sum == 0)||(num[0] + num[1] + num[2] + num[3] == 0)||
         (num[0] + num[1] + num[2] + num[4] == 0)||
