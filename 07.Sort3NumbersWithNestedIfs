@@ -1,92 +1,86 @@
 using System;
 
-class NestedIfs
+class Sort3NumbersWithNestedIfs
 {
     static void Main()
     {
-        Console.Write("Enter three numbers:");
-        double numA = double.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        double numB = double.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        double numC =double.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-
-        bool checkAB =(numA > numB);
-        bool checkAC=(numA>numC);
-        bool equalBC =(numB == numC);
-
-        bool checkBA =(numB > numA);
-        bool checkBC=(numB>numC);
-        bool equalCA =(numC == numA);
-
-        bool checkCA =(numC > numA);
-        bool checkCB=(numC>numB);
-        bool equalAB =(numA == numB);
-        
-        bool equalABC = ((numA == numB)&&(numB == numC)&&(numA==numC));
-
-        if (checkAB)
+        Console.WriteLine("Enter a,b and c:");
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        double c = double.Parse(Console.ReadLine());
+        if (a == b)
         {
-            if ((checkAC) && (checkBC))
+            if (b > c)
             {
-                Console.WriteLine("{0} {1} {2}", numA, numB, numC);
-                Console.WriteLine("\n");
+                Console.WriteLine("{0} {1} {2}", a, a, c);
             }
-            else if ((checkAC)&&(checkCB))
+            else if (b < c)
             {
-                Console.WriteLine("{0} {1} {2}",numA,numC,numB);
-                Console.WriteLine("\n");
+                Console.WriteLine("{0} {1} {2}", c, a, a);
             }
-            else if ((checkAC)&&(equalBC))
-	        {
-                Console.WriteLine("{0} {1} {2}", numA, numC, numB);
-                Console.WriteLine("\n");
-	        }
-            
-        }
-        if (checkBA)
-        {
-            if ((checkBC)&&(checkAC))
+            else if (b == c)
             {
-                Console.WriteLine("{0} {1} {2}",numB, numA, numC);
-                Console.WriteLine("\n");
-            }
-            else if ((checkBC)&&(checkCA))
-            {
-                Console.WriteLine("{0} {1} {2}",numB,numC, numA);
-                Console.WriteLine("\n");
-            }
-            else if ((checkBC) && (equalCA))
-            {
-                Console.WriteLine("{0} {1} {2}", numA, numC, numB);
-                Console.WriteLine("\n");
+                Console.WriteLine("{0} {1} {2}", a, a, a);
             }
         }
-        if (checkCA)
+        else if (b == c)
         {
-            if ((checkCB)&&(checkBA))
+            if (a > b)
             {
-                Console.WriteLine("{0} {1} {2}",numC,numB,numA);
-                Console.WriteLine("\n");
+                Console.WriteLine("{0} {1} {2}", a, b, b); ;
             }
-            else if ((checkCB)&&(checkAB))
+            else if (a < b)
             {
-                Console.WriteLine("{0} {1} {2}", numC, numA, numB);
-                Console.WriteLine("\n");
+                Console.WriteLine("{0} {1} {2}", b, b, a);
             }
-            else if ((checkCB) && (equalAB))
-            {
-                Console.WriteLine("{0} {1} {2}", numC, numA, numB);
-                Console.WriteLine("\n");
-            }
-	    }
-        if (equalABC)
-        {
-            Console.WriteLine("{0} {1} {2}", numA, numB, numC);
-            Console.WriteLine("\n");
         }
-            
-    }
+        else if (c == a)
+        {
+            if (b > c)
+            {
+                Console.WriteLine("{0} {1} {2}", b, c, c);
+            }
+            else if (b < c)
+            {
+                Console.WriteLine("{0} {1} {2}", c, c, b);
+            }
+        }
+        else if (a > b)
+        {
+            if (a > c)
+            {
+                if (b < c)
+                {
+                    Console.WriteLine("{0} {1} {2}", a, c, b);
+                }
+                else if (b>c)
+                {
+                        Console.WriteLine("{0} {1} {2}", a, b, c);
+                }
+            }
+            else if (a < c)
+            {
+                if (b < c)
+                {
+                    Console.WriteLine("{0} {1} {2}", c, a, b);
+                }
+            }
+        }
+        else if (a < b)
+        {
+            if (a < c)
+            {
+                if (b < c)
+                {
+                    Console.WriteLine("{0} {1} {2}", c, b, a);
+                }
+                else if (b > c)
+                {
+                    Console.WriteLine("{0} {1} {2}", b, c, a);
+                }
+             }
+         }
+     }
 }
+
 
