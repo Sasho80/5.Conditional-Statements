@@ -1,72 +1,35 @@
 using System;
 
-class Biggest
+class TheBiggestOfFiveNumbers
 {
     static void Main()
     {
-        Console.Write("Enter five different numbers:");
-        float numA = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numB = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numC = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numD = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numE = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-
-        bool checkAB = (numA > numB);
-        bool checkBA = (numB > numA);
-        bool checkCA = (numC > numA);
-        bool checkDA = (numD > numA);
-        bool checkEA = (numE > numA);
-
-        if (checkAB)
+        Console.WriteLine("Enter five numbers:");
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        double c = double.Parse(Console.ReadLine());
+        double d = double.Parse(Console.ReadLine());
+        double e = double.Parse(Console.ReadLine());
+        if (a>b&&b==c&&c<d&&a>e)
         {
-            float numRef1 = Math.Max(numA, numC);
-            float numRef2 = Math.Max(numRef1, numD);
-            float numRef3 = Math.Max(numRef2, numE);
-            Console.WriteLine("Biggest number is {0}", numRef3);
-            Console.WriteLine("\n");
+            Console.WriteLine(a);
         }
-        else if (checkBA)
+        else if (a>b&&a<c&&d>a&&d==e)
         {
-            float numRef1 = Math.Max(numB, numC);
-            float numRef2 = Math.Max(numRef1, numD);
-            float numRef3 = Math.Max(numRef2, numE);
-            Console.WriteLine("Biggest number is:{0}", numRef3);
-            Console.WriteLine("\n");
+            Console.WriteLine(c);
         }
-        else if (checkCA)
+        else if (a<b&&b>c&&c>d&&d>e)
         {
-            float numRef1 = Math.Max(numC, numB);
-            float numRef2 = Math.Max(numRef1, numD);
-            float numRef3 = Math.Max(numRef2, numE);
-            Console.WriteLine("Biggest number is:{0}", numRef3);
-            Console.WriteLine("\n");
+            Console.WriteLine(b);
         }
-        else if (checkDA)
+        else if (a>b&&a==c&&a<d&&d==e)
         {
-            float numRef1 = Math.Max(numD, numB);
-            float numRef2 = Math.Max(numRef1, numC);
-            float numRef3 = Math.Max(numRef2, numE);
-            Console.WriteLine("Biggest number is:{0}", numRef3);
-            Console.WriteLine("\n");
+            Console.WriteLine(d);
         }
-        else if (checkEA)
+        else if (a<b&&b>c&&c>d&&b<e)
         {
-            float numRef1 = Math.Max(numE, numB);
-            float numRef2 = Math.Max(numRef1, numC);
-            float numRef3 = Math.Max(numRef2, numD);
-            Console.WriteLine("Biggest number is:{0}", numRef3);
-            Console.WriteLine("\n");
+            Console.WriteLine(e);
         }
-        else
-        {
-            Console.WriteLine("Incorrectly entered numbers!");
-        }
-
     }
 }
 
