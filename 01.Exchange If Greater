@@ -1,27 +1,21 @@
 using System;
 
-class ExchangeNumbers
+class ExchangeIfGreater
 {
     static void Main()
     {
-        Console.Write("Enter integer number:a=");
-        float numA = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        Console.Write("Enter integer number:b=");
-        float numB = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-
-        bool greaterAB = (numA > numB);
-        Console.Write("{0}" + " " + "{1}" + " " + " ", numA, numB);
-        if (greaterAB)
+        Console.WriteLine("Enter two numbers:");
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        if (a>b)
         {
-            Console.Write("{0}" + " " + "{1}", numB, numA);
+            Console.Write(b+" "+a); 
         }
         else
         {
-            Console.Write("{0}" + " " + "{1}", numA, numB);
+            Console.Write(a+" "+b);
         }
-        Console.WriteLine("\n");
+        Console.WriteLine();
     }
 }
 
