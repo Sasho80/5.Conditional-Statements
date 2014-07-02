@@ -1,46 +1,33 @@
 using System;
 
-class Sign
+class MultiplicationSign
 {
     static void Main()
     {
-        Console.Write("Enter three numbers:");
-        float numA = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numB = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-        float numC = float.Parse(Console.ReadLine());
-        Console.WriteLine("\n");
-
-        bool checkNum1 = ((numA > 0) && (numB > 0) && (numC > 0));
-        bool checkNum2 = ((numA < 0) && (numB < 0) && (numC > 0));
-        bool checkNum3 = ((numA < 0) && (numB > 0) && (numC > 0));
-        bool checkNum4 = ((numA == 0) && (numB < 0) && (numC > 0));
-        bool checkNum5 = ((numA < 0) && (numB < 0) && (numC < 0));
-
-        Console.Write("{0}" + " " + "{1}" + " " + "{2}" + " ", numA, numB, numC);
-
-        if (checkNum1)
+        Console.WriteLine("Enter a,b an c:");
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        double c = double.Parse(Console.ReadLine());
+        if (a>0&&b>0&&c>0)
         {
-            Console.Write("{0}" + " ", '+');
+            Console.WriteLine("+");
         }
-        else if (checkNum2)
+        else if (a<0&&b<0&&c>0)
         {
-            Console.Write("{0}" + " ", '+');
+            Console.WriteLine("-");
         }
-        else if (checkNum3)
+        else if (a < 0 && b > 0 && c > 0)
         {
-            Console.Write("{0}" + " ", '-');
+            Console.WriteLine("-");
         }
-        else if (checkNum4)
+        else if (a== 0 && b < 0 && c > 0)
         {
-            Console.Write("{0}" + " ", '0');
+            Console.WriteLine("0");
         }
-        else if (checkNum5)
+        else if (a < 0 && b < 0 && c < 0)
         {
-            Console.Write("{0}" + " ", '-');
+            Console.WriteLine("-");
         }
-        Console.WriteLine("\n");
     }
 }
 
