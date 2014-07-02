@@ -1,39 +1,32 @@
 using System;
 using System.Globalization;
-using System.Threading;
 
-class Beer
+class BeerTime
 {
     static void Main()
     {
-      
-        Console.Write("Enter a time in format h:mm:ss tt:");
-        string timeNew = Console.ReadLine();
-        Console.WriteLine("\n");
-        DateTime result;
-        
-        if (!DateTime.TryParseExact(timeNew, "h:mm:ss tt", 
-            CultureInfo.CurrentCulture, 
-            DateTimeStyles.None, out result))
-        {
-            Console.WriteLine("Invalid Exception!");
-            Console.WriteLine("\n");
-            return;
-        }
-        //Search the Web: parse time am pm C#
-        DateTime startTime =DateTime.Parse("1:00 PM");
-        DateTime endTime = DateTime.Parse("2:59 AM");
-
-          if ((result >= startTime )||( result <= endTime))
-          {
-            Console.WriteLine("The enter time {0} is beer time.",result);
-          }
-          else
-          {
-            Console.WriteLine("The enter time {0} no beer time.",result );
-          }
-          Console.WriteLine("\n");
+        Console.WriteLine("Enter beer time in format h:mm tt :");
+        string timeString = Console.ReadLine();
+        DateTime time;
+       if(DateTime.TryParseExact(timeString,"h:mm tt",
+         CultureInfo.InvariantCulture, 
+         DateTimeStyles.None, out time)==true)
+       {
+           DateTime startTime=DateTime.Parse("1:00 PM");
+           DateTime endTime=DateTime.Parse("3:00 AM");
+           if (time>=endTime&&time<startTime)
+           {
+               Console.WriteLine("non-beer time");
+           }
+           else 
+           {
+               Console.WriteLine("beer time");
+           }
+       }
+       else
+       {
+           Console.WriteLine("Invalid format time!");
+       }
     }
-
-
 }
+
