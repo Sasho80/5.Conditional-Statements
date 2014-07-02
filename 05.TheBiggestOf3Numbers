@@ -1,22 +1,29 @@
 using System;
 
-class BiggestNumber
+class TheBiggestOf3Numbers
 {
     static void Main()
     {
-        Console.Write("Enter three numbers:");
-        float numA = float.Parse(Console.ReadLine());
-        Console.Write("\n");
-        float numB = float.Parse(Console.ReadLine());
-        Console.Write("\n");
-        float numC = float.Parse(Console.ReadLine());
-        Console.Write("\n");
-
-        float numD = Math.Max(numA, numB);
-        float numE = Math.Max(numD, numC);
-
-        Console.Write("The biggest is: {0}", numE);
-        Console.WriteLine("\n");
+        Console.WriteLine("Enter a,b and c:");
+        double a = double.Parse(Console.ReadLine());
+        double b = double.Parse(Console.ReadLine());
+        double c = double.Parse(Console.ReadLine());
+        if (a==b&&b==c)
+        {
+            Console.WriteLine("Invalid input!"); 
+        }
+        else if (a>b&&b==c||a>b&&a>c||a==b&&c<a)
+        {
+            Console.WriteLine(a);
+        }
+        else if (a==b&&b<c||a>b&&a<c||a<b&&b<c)
+        {
+            Console.WriteLine(c);
+        }
+        else if (a<b&&b>c||a<b&&b==c)
+        {
+            Console.WriteLine(b);
+        }
     }
 }
 
