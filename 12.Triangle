@@ -1,0 +1,30 @@
+using System;
+
+class Triangle
+{
+    static void Main()
+    {
+        int xA = int.Parse(Console.ReadLine());
+        int yA = int.Parse(Console.ReadLine());
+        int xB = int.Parse(Console.ReadLine());
+        int yB = int.Parse(Console.ReadLine());
+        int xC = int.Parse(Console.ReadLine());
+        int yC = int.Parse(Console.ReadLine());
+        double a=Math.Sqrt(Math.Pow((xC-xB),2)+Math.Pow((yC-yB),2));
+        double b= Math.Sqrt(Math.Pow((xC-xA),2)+Math.Pow((yC-yA),2));
+        double c=Math.Sqrt(Math.Pow((xB-xA),2)+Math.Pow((yB-yA),2));
+        double p = (a + b + c) / 2;
+        double Area = Math.Sqrt(p*(p-a)*(p-b)*(p-c));
+        if (a+b>c&&b+c>a&&c+a>b)
+        {
+            Console.WriteLine("Yes");
+            Console.WriteLine("{0:F2}",Area);
+        }
+        else
+        {
+            Console.WriteLine("No");
+            Console.WriteLine("{0:F2}",c);
+        }
+    }
+}
+
