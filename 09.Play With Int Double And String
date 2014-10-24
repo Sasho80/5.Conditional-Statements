@@ -8,26 +8,31 @@ class PlayWithIntDoubleAndString
         Console.WriteLine("1 --> int");
         Console.WriteLine("2 --> double");
         Console.WriteLine("3 --> string");
-        int n=int.Parse(Console.ReadLine());
-        if (n == 1)
+        int choice = int.Parse(Console.ReadLine());
+        if (choice==1)
         {
             Console.WriteLine("Please enter a int:");
-            int num = int.Parse(Console.ReadLine());
-            num = num + 1;
-            Console.WriteLine("{0}", num);
+            int intNum = int.Parse(Console.ReadLine());
+            intNum = intNum + 1;
+            Console.WriteLine(intNum);
         }
-        else if (n==2)
+        else if (choice == 2)
         {
             Console.WriteLine("Please enter a double:");
-            double num=double.Parse(Console.ReadLine());
-            num = num + 1;
-            Console.WriteLine("{0}",num); 
+            double doubleNum = double.Parse(Console.ReadLine());
+            doubleNum=doubleNum+1;
+            Console.WriteLine(doubleNum);
         }
-        else if (n == 3)
+        else if (choice==3)
         {
             Console.WriteLine("Please enter a string:");
             string str = Console.ReadLine();
-            Console.WriteLine("{0}", str + "*");
+            str += "*";
+            Console.WriteLine(str);
+        }
+        else
+        {
+            Console.WriteLine("Invalid Input!");
         }
     }
 }
