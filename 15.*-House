@@ -5,42 +5,60 @@ class House
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        string pointRoof=new string('.',n/2);
-        string asteriskRoof = new string('*', n / ((n + 1) / 2));
-        Console.Write(pointRoof);
-        Console.Write(asteriskRoof);
-        Console.Write(pointRoof);
-        Console.WriteLine();
-        for (int i = 1,j=1; i <=(n+1)/2-2; i++,j=j+2)
+        string point = string.Empty;
+        string middlePointRoof = string.Empty;
+        string baseRoof =new string('*',n);
+        string basePoint = new string('.', n / 4);
+        string baseMiddlePoint = new string('.', (n - 2) - 2 * (n / 4));
+        string baseMiddleAsterisk = new string('*', (n - 2) - 2 * (n / 4));
+        int j = 1;
+        for (int i = 1, k = (n - i) / 2; i <= (n + 1) / 2; i++, k--)
         {
-            string pointMiddleRoof = new string('.',j);
-            pointRoof = new string('.', n / 2-i);
-            pointRoof = new string('.', n / 2 - i);
-            Console.Write(pointRoof);
-            Console.Write(asteriskRoof);
-            Console.Write(pointMiddleRoof);
-            Console.Write(asteriskRoof);
-            Console.Write(pointRoof);
-            Console.WriteLine();
+            point = new string('.', k);
+            middlePointRoof = new string('.',j);
+            if (i==1)
+            {
+                Console.Write(point);
+                Console.Write("*");
+                Console.Write(point);
+                Console.WriteLine();  
+            }
+            else if (i < (n + 1) / 2)
+            {
+                Console.Write(point);
+                Console.Write("*");
+                Console.Write(middlePointRoof);
+                Console.Write("*");
+                Console.Write(point);
+                Console.WriteLine();
+                j += 2;
+            }
+            else if (i==(n+1)/2)
+            {
+                Console.WriteLine(baseRoof);
+            }
         }
-        string baseRoof = new string('*', n);
-        Console.WriteLine(baseRoof);
-        string pointWall= new string('.', n / 4);
-        for (int j=1; j<=n/2-1; j++)
+        for (int i = 2; i <=(n + 1) / 2; i++)
         {
-            string pointMiddleWall = new string('.',n-2*(n/4)-2*(n/((n+1)/2)));
-            Console.Write(pointWall);
-            Console.Write(asteriskRoof);
-            Console.Write(pointMiddleWall);
-            Console.Write(asteriskRoof);
-            Console.Write(pointWall);
-            Console.WriteLine();
+            if (i < (n + 1) / 2)
+            {
+                Console.Write(basePoint);
+                Console.Write("*");
+                Console.Write(baseMiddlePoint);
+                Console.Write("*");
+                Console.Write(basePoint);
+                Console.WriteLine(); 
+            }
+            if (i==(n + 1) / 2)
+            {
+                Console.Write(basePoint);
+                Console.Write("*");
+                Console.Write(baseMiddleAsterisk);
+                Console.Write("*");
+                Console.Write(basePoint);
+                Console.WriteLine(); 
+            }
         }
-        string asteriskBaseWall = new string('*', n-2*(n/4));
-        Console.Write(pointWall);
-        Console.Write(asteriskBaseWall);
-        Console.Write(pointWall);
-        Console.WriteLine();
     }
 }
 
