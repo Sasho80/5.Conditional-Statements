@@ -4,26 +4,26 @@ class Triangle
 {
     static void Main()
     {
-        int xA = int.Parse(Console.ReadLine());
-        int yA = int.Parse(Console.ReadLine());
-        int xB = int.Parse(Console.ReadLine());
-        int yB = int.Parse(Console.ReadLine());
-        int xC = int.Parse(Console.ReadLine());
-        int yC = int.Parse(Console.ReadLine());
-        double a=Math.Sqrt(Math.Pow((xC-xB),2)+Math.Pow((yC-yB),2));
-        double b= Math.Sqrt(Math.Pow((xC-xA),2)+Math.Pow((yC-yA),2));
-        double c=Math.Sqrt(Math.Pow((xB-xA),2)+Math.Pow((yB-yA),2));
-        double p = (a + b + c) / 2;
-        double Area = Math.Sqrt(p*(p-a)*(p-b)*(p-c));
-        if (a+b>c&&b+c>a&&c+a>b)
+        int Ax = int.Parse(Console.ReadLine());
+        int Ay = int.Parse(Console.ReadLine());
+        int Bx = int.Parse(Console.ReadLine());
+        int By = int.Parse(Console.ReadLine());
+        int Cx = int.Parse(Console.ReadLine());
+        int Cy = int.Parse(Console.ReadLine());
+        double a = Math.Sqrt(Math.Pow((Cx - Ax), 2) + Math.Pow((Cy - Ay), 2));
+        double b = Math.Sqrt(Math.Pow((Bx - Cx), 2) + Math.Pow((By - Cy), 2));
+        double c = Math.Sqrt(Math.Pow((Bx - Ax), 2) + Math.Pow((By - Ay), 2));
+        double halfPerimeter = (a + b + c) / 2;
+        if (a+b>c&&b+c>a&&a+c>b)
         {
             Console.WriteLine("Yes");
-            Console.WriteLine("{0:F2}",Area);
+            Console.WriteLine("{0:F2}",Math.Sqrt(halfPerimeter*(halfPerimeter-a)*
+                (halfPerimeter-b)*(halfPerimeter-c)));
         }
         else
         {
             Console.WriteLine("No");
-            Console.WriteLine("{0:F2}",c);
+            Console.WriteLine("{0:F2}", Math.Sqrt(Math.Pow((Bx - Ax), 2) + Math.Pow((By - Ay), 2)));
         }
     }
 }
