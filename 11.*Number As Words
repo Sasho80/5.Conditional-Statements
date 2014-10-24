@@ -5,91 +5,66 @@ class NumberAsWords
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
-        if (n<0||n>999)
-        {
-            Console.WriteLine("Invalide input!");
-            return;
-        }
-        string[] str1 ={ "Zero", "One","Two", "Three",
-             "Four", "Five", "Six", "Seven", 
-             "Eight", "Nine", "Ten", "Eleven",
-             "Twelve","Thirteen", "Fourteen", "Fifteen", "Sixteen", 
-             "Seventeen", "Eighteen", "Nineteen"};
-        string[] str2 ={ "Null","Twenty", "Thirty","Fourty", "Fifty",
-             "Sixty", "Seventy","Eighty", "Ninety"};
-        string[] str3={ "Null", "one","two", "three",
-             "four", "five", "six", "seven", 
-             "eight", "nine","ten","eleven",
-             "twelve","thirteen", "fourteen", "fifteen", "sixteen", 
-             "seventeen", "eighteen", "nineteen"};
-        string[] str4 ={ "Null","twenty", "thirty","fourty", "fifty",
-             "sixty", "seventy","eighty", "ninety"};
-        int hundreds = n / 10;
-        int remainderHundreds = n % 10;
-        int tens2 = hundreds / 10;
-        int remainderTens2 = hundreds % 10;
-        int Units2 = tens2 / 10;
-        int remainderUnits2 = tens2 % 10;
-        if (n==0||n<=19)
-        {
-            Console.WriteLine(str1[n]);
-        }
+        string[] wordUpper = {"Zero","One","Two","Three",
+        "Four","Five", "Six","Seven","Eight","Nine","Ten",
+        "Eleven","Twelve","Thirteen","Fourteen","Fifteen", 
+        "Sixteen","Eighteen","Seventeen" ,"Nineteen"};
+        string[] wordLower = {string.Empty,"one","two","three","four",
+        "five","six","seven","eight","nine","ten","eleven",
+        "twelve","thirteen","fourteen","fifteen","sixteen",
+        "seventeen","eighteen","nineteen"};
+        string[] wordLowerTens = {string.Empty,string.Empty,
+        "twenty","thirty","forty","fifty","sixty","seventy",
+        "eighty","ninety"};
+        string[] wordTens = {string.Empty,string.Empty,"Twenty","Thirty","Forty",
+        "Fifty","Sixty","Seventy","Eighty","Ninety"};
+        int remainderUnits = n % 10;
+        int quotientUnit=n/10;
+        int remainderTens = quotientUnit % 10;
+        int quotientTens = quotientUnit / 10;
+        int remainderHundreds = quotientTens % 10;
+        if (n>=0&&n<=19)
+	    {
+            Console.WriteLine("{0}",wordUpper[n]);
+	    }
         else if (n>=20&&n<=99)
         {
-            int tens1 = n / 10;
-            int remainderTens1 = n % 10;
-            int Units1 = tens1 / 10;
-            int remainderUnits1 = tens1 % 10;
-            if (remainderTens1==0)
-            {//20,30,40,50,60,70,80,90
-                Console.WriteLine(str2[remainderUnits1-1]);
+            if (n%10==0)
+            {
+                Console.WriteLine("{0}",wordTens[n/10]);
             }
-            else if (remainderTens1!=0)
-            {//21...29,...91...99
-                Console.Write(str2[remainderUnits1 - 1]);
-                Console.Write(" and ");
-                Console.Write(str3[remainderTens1]);
+            else if (n%10!=0)
+            {
+                Console.WriteLine("{0} {1}",wordTens[remainderTens],wordLower[remainderUnits]); 
             }
         }
-        else if (n==100||n==200||n==300||n==400||
-            n==500||n==600||n==700||n==800||n==900)
+        else if (n%100==0)
         {
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred \n");
+            Console.WriteLine("{0} hundred", wordUpper[n/100]);
         }
-        else if (remainderTens2==0&&remainderHundreds!=0)
-        {       //101...109,..901...909
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred and ");
-            Console.Write(str3[remainderUnits2]);
+        else if (n % 100 != 0 && (remainderTens == 0||remainderTens==1))
+        {
+            if (remainderTens==0)
+            {
+                Console.WriteLine("{0} hundred and {1}", 
+                wordUpper[remainderHundreds], wordLower[remainderUnits]);
+            }
+            else if (remainderTens==1)
+            {
+                Console.WriteLine("{0} hundred and {1}", wordUpper[remainderHundreds], wordLower[remainderUnits+10]);
+            }
         }
-        else if (remainderTens2 == 1 && remainderHundreds == 0)
-        {//110,210,310,..910
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred and ");
-            Console.WriteLine(str3[remainderHundreds+10]);
+        else if (n%100!=0&&remainderTens>1)
+        {
+            if (remainderUnits != 0 && remainderTens > 1)
+            {
+                Console.WriteLine("{0} hundred and {1} {2}", wordUpper[remainderHundreds], wordLowerTens[remainderTens], wordLower[remainderUnits]);
+            }
+            else if(remainderTens>1)
+            {
+                Console.WriteLine("{0} hundred and {1}", wordUpper[remainderHundreds], wordLowerTens[remainderTens]);
+            }
         }
-        else if (remainderTens2== 1 && remainderHundreds != 0)
-        {   //111...119,..911...919
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred and ");
-            Console.WriteLine(str3[remainderHundreds+10]);
-        }
-        else if (remainderTens2>=2&&remainderHundreds==0)
-        {//120...190,..920...990
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred and ");
-            Console.Write(str4[remainderTens2 - 1]);
-        }
-        else if (remainderTens2>=2&&remainderHundreds!=0)
-        {//121..129,..191...199,..921...929,..991...999
-            Console.Write(str1[remainderUnits2]);
-            Console.Write(" hundred and ");
-            Console.Write(str4[remainderTens2 - 1]);
-            Console.Write(" ");
-            Console.Write(str3[remainderHundreds]);
-        }
-        Console.WriteLine();
     }
 }
 
