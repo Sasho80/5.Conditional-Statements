@@ -9,13 +9,12 @@ class ExchangeIfGreater
         double b = double.Parse(Console.ReadLine());
         if (a>b)
         {
-            Console.Write(b+" "+a); 
+            Console.WriteLine("{0} {1}", b, a); 
         }
         else
         {
-            Console.Write(a+" "+b);
+            Console.WriteLine("{0} {1}", a, b); 
         }
-        Console.WriteLine();
     }
 }
 
