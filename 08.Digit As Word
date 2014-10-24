@@ -4,9 +4,9 @@ class DigitAsWord
 {
     static void Main()
     {
-        Console.WriteLine("Enter number of (0-9):");
-        string n=Console.ReadLine();
-        switch (n)
+        Console.WriteLine("Enter digit from (0-9):");
+        string digit = Console.ReadLine();
+        switch (digit)
         {
             case "0": Console.WriteLine("zero");
                 break;
