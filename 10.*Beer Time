@@ -5,28 +5,22 @@ class BeerTime
 {
     static void Main()
     {
-        Console.WriteLine("Enter beer time in format h:mm tt :");
+        Console.WriteLine("Enter a time in format “hh:mm tt”:");
         string timeString = Console.ReadLine();
-        DateTime time;
-       if(DateTime.TryParseExact(timeString,"h:mm tt",
-         CultureInfo.InvariantCulture, 
-         DateTimeStyles.None, out time)==true)
-       {
-           DateTime startTime=DateTime.Parse("1:00 PM");
-           DateTime endTime=DateTime.Parse("3:00 AM");
-           if (time>=endTime&&time<startTime)
-           {
-               Console.WriteLine("non-beer time");
-           }
-           else 
-           {
-               Console.WriteLine("beer time");
-           }
-       }
-       else
-       {
-           Console.WriteLine("Invalid format time!");
-       }
+        string format = "h:mm tt";
+        DateTime enterTime = DateTime.ParseExact(timeString,
+        format, CultureInfo.InvariantCulture);
+        DateTime startTime=DateTime.Parse("1:00 PM");
+        DateTime endTime = DateTime.Parse("2:59 AM");
+        if (enterTime>=startTime||enterTime<=endTime)
+        {
+            Console.WriteLine("beer time");
+        }
+        else
+        {
+            Console.WriteLine("non-beer time");
+        }
     }
+
 }
 
