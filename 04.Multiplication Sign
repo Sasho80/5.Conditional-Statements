@@ -4,30 +4,25 @@ class MultiplicationSign
 {
     static void Main()
     {
-        Console.WriteLine("Enter a,b an c:");
+        Console.WriteLine("Enter integers a,b and c:");
         double a = double.Parse(Console.ReadLine());
         double b = double.Parse(Console.ReadLine());
         double c = double.Parse(Console.ReadLine());
-        if (a>0&&b>0&&c>0)
+        if (a>0&&b>0&&c>0||a<0&&b<0&&c>0||a>0&&b<0&&c<0||
+            a<0&&b>0&&c<0)
         {
             Console.WriteLine("+");
         }
-        else if (a<0&&b<0&&c>0)
+        else if (a<0&&b>0&&c>0||a>0&&b<0&&c>0||a>0&&b>0&&c<0||
+            a<0&&b<0&&c<0)
         {
             Console.WriteLine("-");
         }
-        else if (a < 0 && b > 0 && c > 0)
+        else
         {
-            Console.WriteLine("-");
-        }
-        else if (a== 0 && b < 0 && c > 0)
-        {
-            Console.WriteLine("0");
-        }
-        else if (a < 0 && b < 0 && c < 0)
-        {
-            Console.WriteLine("-");
+            Console.WriteLine(0);
         }
     }
 }
+
 
