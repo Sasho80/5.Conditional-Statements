@@ -4,23 +4,23 @@ class BonusScore
 {
     static void Main()
     {
-        Console.WriteLine("Enter number:");
-        int n = int.Parse(Console.ReadLine());
-        if (n>=1&&n<=3)
+        Console.WriteLine("Enter bonus score:");
+        int score = int.Parse(Console.ReadLine());
+        if (score>=1&&score<=3)
         {
-            Console.WriteLine(n*10);
+            Console.WriteLine("result: {0}",score*10);
         }
-        else if (n>=4&&n<=6)
+        else if (score>=4&&score<=6)
         {
-            Console.WriteLine(n*100);
+            Console.WriteLine("result: {0}",score*100);
         }
-        else if (n>=7&&n<=9)
+        else if (score>=7&&score<=9)
         {
-            Console.WriteLine(n*1000);
+            Console.WriteLine("result: {0}",score*1000);
         }
-        else if (n<=0||n>9)
+        else if (score<= 0||score > 9)
         {
-            Console.WriteLine("Invalid Score!");
+            Console.WriteLine("Invalid score!");
         }
     }
 }
